@@ -1,17 +1,27 @@
 class Vector
+  attr_accessor :x, :y
+
   def initialize(x, y)
     @x = x
     @y = y
   end
   
   def to_s
-    puts"(#{@x},#{@y})"
+    "(#{@x},#{@y})"
   end
 
   def length
-    printf"%f", Math::sqrt((@x ** 2)+(@y ** 2))
+    Math::sqrt((@x ** 2)+(@y ** 2))
   end
+
+  def add(v2)
+    v3 = Vector.new(v2.x + @x, v2.y + @y)
+  end
+
 end
+
+
+
 
 =begin
 puts "ベクトルを入れてください"
